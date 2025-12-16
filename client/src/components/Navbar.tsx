@@ -138,10 +138,10 @@ const Navbar = () => {
         <div className="flex items-center gap-3">
           <button
             onClick={() => navigate("/auth/signin")}
-            className="px-6 py-1.5 max-sm:text-sm rounded-md
-            bg-gradient-to-r from-[#3AA9FF] via-[#6A6CFF] to-[#FF5DB1]
-            hover:shadow-[0_0_30px_rgba(255,93,177,0.35)]
-            active:scale-95 transition"
+            className="px-6 py-1.5 max-sm:text-sm rounded-md text-white font-medium
+  bg-gradient-to-r from-[#3b82f6] via-[#a855f7] to-[#fb923c]
+  hover:shadow-[0_0_30px_rgba(251,146,60,0.4)]
+  active:scale-95 transition-all duration-300"
           >
             Get started
           </button>

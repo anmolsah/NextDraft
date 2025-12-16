@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <section
       className="relative flex flex-col items-center text-white pb-20 px-4
-    bg-[#0E0F13] overflow-hidden font-poppins"
+      overflow-hidden font-poppins"
     >
       <a
         className="flex items-center gap-2 border border-white/10 rounded-full

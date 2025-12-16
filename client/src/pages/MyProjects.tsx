@@ -1,8 +1,10 @@
+import { useState } from "react";
 
 const MyProjects = () => {
+  const [loading,setLoading]=useState(true);
   return (
     <div>
-      <h1> welcome to myprojects</h1>
+      
     </div>
   );
 };
