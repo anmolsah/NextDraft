@@ -40,6 +40,9 @@ const Projects = () => {
       }
     }, 2000);
   };
+  const saveProject = async () => {};
+  const downlaodCode = async () => {};
+  const togglePublish = async () => {};
 
   useEffect(() => {
     fetchProject();
@@ -111,6 +114,7 @@ const Projects = () => {
         {/* right */}
         <div className="flex items-center justify-end gap-3 flex-1 text-xs sm:text-sm">
           <button
+            onClick={saveProject}
             disabled={isSaving}
             className="max-sm:hidden bg-gray-800 hover:bg-gray-700 text-white px-3.5 py-1 flex items-center gap-2 rounded sm:rounded-sm transition-colors border border-gray-700"
           >
@@ -128,10 +132,16 @@ const Projects = () => {
           >
             <FullscreenIcon size={16} /> Preview
           </Link>
-          <button className="bg-gradient-to-r from-[#3AA9FF] via-[#6A6CFF] to-[#FF5DB1] hover:from-[#FF5DB1] hover:via-[#6A6CFF] hover:to-[#3AA9FF] text-white px-3.5 py-1 flex items-center gap-2 rounded sm:rounded-sm transition-colors border border-transparent hover:border-white/20">
+          <button
+            onClick={downlaodCode}
+            className="bg-gradient-to-r from-[#3AA9FF] via-[#6A6CFF] to-[#FF5DB1] hover:from-[#FF5DB1] hover:via-[#6A6CFF] hover:to-[#3AA9FF] text-white px-3.5 py-1 flex items-center gap-2 rounded sm:rounded-sm transition-colors border border-transparent hover:border-white/20"
+          >
             <ArrowBigDownDashIcon size={16} /> Download
           </button>
-          <button className="bg-gradient-to-r from-[#FF5DB1] to-[#FFB547] hover:from-[#FFB547] hover:to-[#FF5DB1] text-white px-3.5 py-1 flex items-center gap-2 rounded sm:rounded-sm transition-colors border border-transparent hover:border-white/20">
+          <button
+            onClick={togglePublish}
+            className="bg-gradient-to-r from-[#FF5DB1] to-[#FFB547] hover:from-[#FFB547] hover:to-[#FF5DB1] text-white px-3.5 py-1 flex items-center gap-2 rounded sm:rounded-sm transition-colors border border-transparent hover:border-white/20"
+          >
             {project.isPublished ? (
               <EyeOffIcon size={16} />
             ) : (

@@ -71,17 +71,30 @@ const Home = () => {
         </button>
       </form>
 
-      <div className="flex flex-wrap items-center justify-center gap-16 mt-16 opacity-70">
-        {["framer", "huawei", "instagram", "microsoft", "walmart"].map(
+      <div className="flex flex-wrap items-center justify-center gap-16 md:gap-16 mt-16 opacity-70">
+        {["framer", "huawei", "instagram", "google", "meta"].map((logo) => (
+          <img
+            key={logo}
+            src={`https://cdn.simpleicons.org/${logo}`}
+            className="h-8 md:h-10 w-auto hover:opacity-100 transition duration-300"
+          />
+        ))}
+      </div>
+      {/* <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16 mt-16 opacity-70">
+        {["framer", "huawei", "instagram", "google", "meta"].map(
           (logo) => (
             <img
               key={logo}
-              src={`https://saasly.prebuiltui.com/assets/companies-logo/${logo}.svg`}
-              className="max-w-28 hover:opacity-100 transition"
+              // Using Simple Icons CDN which is reliable for brand logos
+              src={`https://cdn.simpleicons.org/${logo}`}
+              alt={logo}
+              // brightness-0 makes it black, invert makes it white
+              // This ensures all logos are uniform white
+              className="h-8 md:h-10 w-auto hover:opacity-100 transition duration-300 brightness-0 invert"
             />
           )
         )}
-      </div>
+      </div> */}
     </section>
   );
 };
