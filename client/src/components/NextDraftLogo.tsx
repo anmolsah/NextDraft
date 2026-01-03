@@ -14,9 +14,9 @@ export const NextDraftLogo = ({ className = "" }) => {
         >
           <defs>
             <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="10%" stopColor="#3b82f6" /> {/* Blue */}
-              <stop offset="50%" stopColor="#a855f7" /> {/* Purple */}
-              <stop offset="100%" stopColor="#fb923c" /> {/* Orange */}
+              <stop offset="10%" stopColor="#3b82f6" /> 
+              <stop offset="50%" stopColor="#a855f7" /> 
+              <stop offset="100%" stopColor="#fb923c" /> 
             </linearGradient>
           </defs>
 
