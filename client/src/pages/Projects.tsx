@@ -1,7 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import type { Project } from "../types";
-import { Loader2Icon, MessageSquareIcon, XIcon } from "lucide-react";
+import {
+  ArrowBigDownDashIcon,
+  EyeIcon,
+  EyeOffIcon,
+  FullscreenIcon,
+  LaptopIcon,
+  Loader2Icon,
+  MessageSquareIcon,
+  SaveIcon,
+  SmartphoneIcon,
+  TabletIcon,
+  XIcon,
+} from "lucide-react";
 import { dummyConversations, dummyProjects } from "../assets/assets";
 import NextDraftMonogram from "../components/NextDraftMonogram";
 
@@ -76,9 +88,58 @@ const Projects = () => {
           </div>
         </div>
         {/* middle */}
-        <div></div>
+        <div className="hidden sm:flex gap-2 bg-gray-950 p-1.5 rounded-md">
+          <SmartphoneIcon
+            onClick={() => setDevice("phone")}
+            className={`size-6 p-1 rounded cursor-pointer ${
+              device === "phone" ? "bg-gray-700" : ""
+            }`}
+          />
+          <TabletIcon
+            onClick={() => setDevice("tablet")}
+            className={`size-6 p-1 rounded cursor-pointer ${
+              device === "tablet" ? "bg-gray-700" : ""
+            }`}
+          />
+          <LaptopIcon
+            onClick={() => setDevice("desktop")}
+            className={`size-6 p-1 rounded cursor-pointer ${
+              device === "desktop" ? "bg-gray-700" : ""
+            }`}
+          />
+        </div>
         {/* right */}
-        <div></div>
+        <div className="flex items-center justify-end gap-3 flex-1 text-xs sm:text-sm">
+          <button
+            disabled={isSaving}
+            className="max-sm:hidden bg-gray-800 hover:bg-gray-700 text-white px-3.5 py-1 flex items-center gap-2 rounded sm:rounded-sm transition-colors border border-gray-700"
+          >
+            {isSaving ? (
+              <Loader2Icon className="animate-spin" size={16} />
+            ) : (
+              <SaveIcon size={16} />
+            )}
+            Save
+          </button>
+          <Link
+            className="flex items-center gap-2 px-4 py-1 rounded sm:rounded-sm border border-gray-700 hover:border-gray-500 transistion-colors"
+            target="_blank"
+            to={`/preview/${projectId}`}
+          >
+            <FullscreenIcon size={16} /> Preview
+          </Link>
+          <button className="bg-gradient-to-r from-[#3AA9FF] via-[#6A6CFF] to-[#FF5DB1] hover:from-[#FF5DB1] hover:via-[#6A6CFF] hover:to-[#3AA9FF] text-white px-3.5 py-1 flex items-center gap-2 rounded sm:rounded-sm transition-colors border border-transparent hover:border-white/20">
+            <ArrowBigDownDashIcon size={16} /> Download
+          </button>
+          <button className="bg-gradient-to-r from-[#FF5DB1] to-[#FFB547] hover:from-[#FFB547] hover:to-[#FF5DB1] text-white px-3.5 py-1 flex items-center gap-2 rounded sm:rounded-sm transition-colors border border-transparent hover:border-white/20">
+            {project.isPublished ? (
+              <EyeOffIcon size={16} />
+            ) : (
+              <EyeIcon size={16} />
+            )}
+            {project.isPublished ? "Unpublish" : "Publish"}
+          </button>
+        </div>
       </div>
     </div>
   ) : (
